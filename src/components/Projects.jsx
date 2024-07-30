@@ -1,10 +1,14 @@
 
-const Projects = () => {
+const Projects = ({contactRef}) => {
+  const handleButtonClick = () => {
+    contactRef.current.scrollIntoView({ behavior: 'smooth' });
+};
+
   return (
     <div className="my-11 lg:mt-5 p-4 md:px-6 lg:px-[120px]">
       <div className="flex justify-between  my-11">
         <h2 className="font-semibold text-5xl">Projects</h2>
-        <button className='text-center font-medium tracking-widest text-lg pb-2 border-b-green border-b-2'>CONTACT ME</button>
+        <button onClick={handleButtonClick} className='text-center font-medium tracking-widest text-lg pb-2 border-b-green border-b-2'>CONTACT ME</button>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-7 gap-[60px]">
         <div>
