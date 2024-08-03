@@ -10,7 +10,7 @@ This is a portfolio of my skills in front-end development.
 
 # Screenshot
 
-![](src/assets/Screenshot.png)
+![](/public/Screenshot.png)
 
 # Links
 
