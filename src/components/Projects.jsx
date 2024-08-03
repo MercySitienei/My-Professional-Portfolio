@@ -1,5 +1,42 @@
 import { useEffect, useRef, useState } from 'react'
 const Projects = () => {
+
+  const projects = [
+    {
+      id: 1,
+      bgClass: 'bg-countries_app',
+      title: 'COUNTRIES WEB APP',
+      tech: ['REACT', 'JAVASCRIPT', 'TAILWIND CSS', 'HTML'],
+      viewProject: 'https://mercysitienei.github.io/countries-app/',
+      codeLink: 'https://github.com/MercySitienei/countries-app'
+    },
+    {
+      id: 2,
+      bgClass: 'bg-audiophile',
+      title: 'AUDIOPHILE E-COMMERCE WEBSITE',
+      tech: ['REACT', 'JAVASCRIPT', 'TAILWIND CSS', 'HTML'],
+      viewProject: 'https://mercysitienei.github.io/audiophile-ecommerce/',
+      codeLink: 'https://github.com/MercySitienei/audiophile-ecommerce'
+    },
+    {
+      id: 3,
+      bgClass: 'bg-todo_project',
+      title: 'TODO WEB APP',
+      tech: ['REACT', 'JAVASCRIPT', 'TAILWIND CSS', 'HTML'],
+      viewProject: 'https://mercysitienei.github.io/todoApp/',
+      codeLink: 'https://github.com/MercySitienei/todoAPP'
+    },
+    {
+      id: 4,
+      bgClass: 'bg-edusity',
+      title: 'EDUSITY COLLEGE WEBSITE',
+      tech: ['REACT', 'JAVASCRIPT', 'CSS', 'HTML'],
+      viewProject: 'https://mercysitienei.github.io/Edusity/',
+      codeLink: 'https://github.com/MercySitienei/Edusity'
+    },
+  ];
+
+
   const [result, setResult] = useState('');
   const [emailError, setEmailError] = useState('');
   const [messageError, setMessageError] = useState('');
@@ -117,62 +154,19 @@ const Projects = () => {
           )}
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-7 gap-[60px]">
-        <div>
-          <div className="bg-countries_app bg-center bg-cover bg-no-repeat h-[300px]"></div>
-          <h3 className="text-2xl md:text-xl font-semibold py-3">COUNTRIES WEB APP</h3>
-          <div className="flex gap-5 text-lg pb-5 ">
-            <span>REACT</span>
-            <span>JAVASCRIPT</span>
-            <span>TAILWIND CSS</span>
-            <span>HTML</span>
+        {projects.map(project => (
+          <div className='lg:relative  lg:group' key={project.id}>
+            <div className={`${project.bgClass} bg-center transition-transform duration-300 lg:group-hover:scale-110 bg-cover bg-no-repeat h-[300px]`}></div>
+            <h3 className="text-2xl md:text-xl font-semibold py-3">{project.title}</h3>
+            <div className="flex gap-5 text-lg pb-5 ">
+              {project.tech.map(tech => <span key={tech}>{tech}</span> )}
+            </div>
+            <div className="flex lg:top-0 lg:right-0 lg:left-0 lg:bottom-[98px] lg:justify-center lg:flex-col lg:gap-8 lg:items-center lg:opacity-0 lg:absolute lg:hover:bg-light-black lg:hover:bg-opacity-70 lg:hover:opacity-100 lg:transition-opacity duration-300 gap-11">
+              <button className='text-center font-medium lg:hover:text-opacity-100 lg:hover:z-50 tracking-widest text-lg pb-2 border-b-green border-b-2 hover:text-green'><a target='blank' href={project.viewProject}>VIEW PROJECT</a> </button>
+              <button className='text-center font-medium lg:hover:text-opacity-100 lg:hover:z-50 tracking-widest text-lg pb-2 border-b-green border-b-2 hover:text-green'><a target='blank' href={project.codeLink}>VIEW CODE</a></button>
+            </div>
           </div>
-          <div className="flex gap-11">
-            <button className='text-center font-medium tracking-widest text-lg pb-2 border-b-green border-b-2'><a href="https://mercysitienei.github.io/countries-app/">VIEW PROJECT</a> </button>
-            <button className='text-center font-medium tracking-widest text-lg pb-2 border-b-green border-b-2'><a href="https://github.com/MercySitienei/countries-app">VIEW CODE</a></button>
-          </div>
-        </div>
-        <div>
-          <div className="bg-audiophile bg-center bg-cover bg-no-repeat h-[300px]"></div>
-          <h3 className="text-2xl md:text-xl font-semibold py-3">AUDIOPHILE E-COMMERCE WEBSITE</h3>
-          <div className="flex gap-5 text-lg pb-5 ">
-            <span>REACT</span>
-            <span>JAVASCRIPT</span>
-            <span>TAILWIND CSS</span>
-            <span>HTML</span>
-          </div>
-          <div className="flex gap-11">
-            <button className='text-center font-medium tracking-widest text-lg pb-2 border-b-green border-b-2'><a href="https://mercysitienei.github.io/audiophile-ecommerce/">VIEW PROJECT</a> </button>
-            <button className='text-center font-medium tracking-widest text-lg pb-2 border-b-green border-b-2'><a href="https://github.com/MercySitienei/audiophile-ecommerce">VIEW CODE</a></button>
-          </div>
-        </div>
-        <div>
-          <div className="bg-todo_project bg-center bg-cover bg-no-repeat h-[300px]"></div>
-          <h3 className="text-2xl md:text-xl font-semibold py-3">TODO WEB APP</h3>
-          <div className="flex gap-5 text-lg pb-5 ">
-            <span>REACT</span>
-            <span>JAVASCRIPT</span>
-            <span>TAILWIND CSS</span>
-            <span>HTML</span>
-          </div>
-          <div className="flex gap-11">
-            <button className='text-center font-medium tracking-widest text-lg pb-2 border-b-green border-b-2'><a href="https://mercysitienei.github.io/todoApp/">VIEW PROJECT</a> </button>
-            <button className='text-center font-medium tracking-widest text-lg pb-2 border-b-green border-b-2'><a href="https://github.com/MercySitienei/todoApp">VIEW CODE</a></button>
-          </div>
-        </div>
-        <div>
-          <div className="bg-edusity bg-center bg-cover bg-no-repeat h-[300px]"></div>
-          <h3 className="text-2xl md:text-xl font-semibold py-3">EDUSITY COLLEGE WEBSITE</h3>
-          <div className="flex gap-5 text-lg pb-5 md:pb-11 ">
-            <span>REACT</span>
-            <span>JAVASCRIPT</span>
-            <span>CSS</span>
-            <span>HTML</span>
-          </div>
-          <div className="flex gap-11">
-            <button className='text-center font-medium tracking-widest text-lg pb-2 border-b-green border-b-2'><a href="https://mercysitienei.github.io/Edusity/">VIEW PROJECT</a> </button>
-            <button className='text-center font-medium tracking-widest text-lg pb-2 border-b-green border-b-2'><a href="https://github.com/MercySitienei/Edusity">VIEW CODE</a></button>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   )
